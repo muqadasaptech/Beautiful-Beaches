@@ -1,0 +1,358 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "Montserrat", sans-serif;
+}
+
+.container .img-fluid {
+    overflow: hidden;
+}
+
+.container .img-fluid img {
+    transition: transform .9s;
+}
+
+.container .img-fluid:hover img {
+    transform: scale(1.1);
+}
+
+/*** Quote ***/
+@media (min-width: 992px) {
+    .container.quote {
+        max-width: 100% !important;
+    }
+
+    .container.quote .quote-text {
+        padding-left: calc(((100% - 960px) / 2) + .75rem);
+    }
+
+    .container.quote .quote-form {
+        padding-right: calc(((100% - 960px) / 2) + .75rem);
+    }
+}
+
+@media (min-width: 1200px) {
+    .container.quote .quote-text {
+        padding-left: calc(((100% - 1140px) / 2) + .75rem);
+    }
+
+    .container.quote .quote-form {
+        padding-right: calc(((100% - 1140px) / 2) + .75rem);
+    }
+}
+
+@media (min-width: 1400px) {
+    .container.quote .quote-text {
+        padding-left: calc(((100% - 1320px) / 2) + .75rem);
+    }
+
+    .container.quote .quote-form {
+        padding-right: calc(((100% - 1320px) / 2) + .75rem);
+    }
+}
+
+.container.quote .quote-text {
+    background: linear-gradient(rgba(129, 235, 177, 0.601), rgba(1, 10, 53, .8)), url(../images/home-1.jpg) center center no-repeat;
+    background-size: cover;
+
+}
+
+.container.quote .quote-text .h-100,
+.container.quote .quote-form .h-100 {
+    padding: 6rem 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+/* Quote End */
+
+/* Footer Section */
+.footer {
+    color: #ffffff;
+    background: linear-gradient(#77e0cacc, #023361cc), url(../images/gallery-1.jpg) center center no-repeat;
+    background-size: cover;
+}
+
+.footer .btn.btn-link {
+    display: block;
+    margin-bottom: 5px;
+    padding: 0;
+    text-align: left;
+    color: #ffffff;
+    font-weight: normal;
+    text-transform: capitalize;
+    transition: .3s;
+    text-decoration: none;
+}
+
+.footer .btn.btn-link::before {
+    position: relative;
+    content: "\f105";
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    color: #ffffff;
+    margin-right: 10px;
+    text-decoration: none;
+}
+
+.footer .btn.btn-link:hover {
+    letter-spacing: 1px;
+    box-shadow: none;
+    text-decoration: none;
+}
+
+.footer .btn.btn-square {
+    color: #ffffff;
+    transition: .9s;
+    border: 1px solid var(--dark);
+}
+
+.footer .btn.btn-square:hover {
+    color: var(--dark);
+    border-color: var(--light);
+}
+
+.footer .copyright {
+    padding: 25px 0;
+    border-top: 1px solid rgba(256, 256, 256, .1);
+}
+
+.footer .copyright a {
+    color: var(--light);
+    text-decoration: none;
+}
+
+.d-flex {
+    display: flex !important
+}
+/* Footer End */
+
+/* Aboutus Section */
+#about-us {
+    background: linear-gradient(to right, #e0f7fa, #e0f2f1);
+}
+
+#about-us h2 {
+    font-size: 2.5rem;
+    text-transform: capitalize;
+}
+
+#about-us p {
+    font-size: 1.1rem;
+    color: #555;
+}
+
+#about-us .list-unstyled li i {
+    font-size: 1.2rem;
+}
+/* Aboutus End */
+
+/* Contact Us Section */
+#contact-us {
+    background: linear-gradient(to right, #e0f7fa, #e8f5e9);
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+}
+
+#contact-us .form-floating label {
+    transition: all 0.2s ease-in-out;
+}
+
+#contact-us .form-floating input:focus~label,
+#contact-us .form-floating textarea:focus~label,
+#contact-us .form-floating input:not(:placeholder-shown)~label,
+#contact-us .form-floating textarea:not(:placeholder-shown)~label {
+    font-size: 0.85rem;
+    transform: translateY(-1.0rem);
+    color: #00794e;
+    background-color: none;
+}
+
+#contact-us .btn {
+    font-size: 1rem;
+    padding: 0.75rem 1rem;
+}
+
+#contact-us .card {
+    border-radius: 10px;
+    padding: 1.5rem;
+}
+
+.hovereffects {
+    border: 1px solid transparent;
+    width: fit-content;
+    height: fit-content;
+    padding: 5px;
+    border-radius: 50%;
+    transition: .9s;
+}
+
+.hovereffect {
+    border: 1px solid transparent;
+    width: fit-content;
+    height: fit-content;
+    padding: 5px;
+    border-radius: 50%;
+    transition: .9s;
+}
+
+.hovereffect:hover {
+    border: 1px solid white;
+}
+
+.hovereffects:hover {
+    border: 1px solid #00794e;
+}
+/* Contactus End */
+
+/* Feedback Section */
+#feedback {
+    background: linear-gradient(to right, #fce4ec, #e8f5e9);
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+}
+
+#feedback .form-floating label {
+    transition: all 0.2s ease-in-out;
+}
+
+#feedback .form-floating input:focus~label,
+#feedback .form-floating textarea:focus~label,
+#feedback .form-floating select:focus~label,
+#feedback .form-floating input:not(:placeholder-shown)~label,
+#feedback .form-floating textarea:not(:placeholder-shown)~label,
+#feedback .form-floating select:not(:placeholder-shown)~label {
+    font-size: 0.85rem;
+    color: #28a745;
+    background-color: transparent;
+}
+
+#feedback .btn {
+    font-size: 1rem;
+    padding: 0.75rem 1rem;
+}
+
+#feedback .card {
+    border-radius: 10px;
+    padding: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+#feedback .card img {
+    border: 3px solid #28a745;
+    margin-top: -50px;
+}
+/* Feedback End */
+
+/* Queries Section */
+#queries {
+    background: linear-gradient(to right, #f8f9fa, #e3f2fd);
+    padding: 3rem 0;
+}
+
+#queries .form-floating label {
+    transition: all 0.2s ease-in-out;
+}
+
+#queries .form-floating input:focus~label,
+#queries .form-floating textarea:focus~label,
+#queries .form-floating input:not(:placeholder-shown)~label,
+#queries .form-floating textarea:not(:placeholder-shown)~label {
+    font-size: 0.85rem;
+    color: #00794e;
+}
+
+#queries img {
+    max-width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.form-control {
+    border: 2px solid #e6e6e6;
+    border-radius: 5px;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.form-control:focus {
+    border-color: #38b6a7;
+    box-shadow: 0 0 8px rgba(56, 182, 167, 0.5);
+    outline: none;
+}
+
+.text-sea-green {
+    color: #38b6a7;
+}
+/* Queries End */
+
+/* Gallery Section */
+/* Navigation Tabs */
+.nav-tabs .nav-link {
+    color: #38b6a7;
+    transition: all 0.3s ease-in-out;
+}
+
+.nav-tabs .nav-link.active {
+    background-color: #38b6a7;
+    color: #fff;
+    border: none;
+}
+
+.nav-tabs .nav-link:hover {
+    color: #2d9586;
+    /* Darker sea green on hover */
+}
+
+/* Gallery Item */
+.gallery-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px;
+}
+
+.gallery-item img {
+    transition: transform 0.4s ease, opacity 0.3s ease;
+}
+
+.gallery-item:hover img {
+    transform: scale(1.1);
+    opacity: 0.9;
+}
+
+.overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(56, 182, 167, 0.8);
+    color: #fff;
+    /* Keep overlay text white for better contrast */
+    text-align: center;
+    padding: 10px 0;
+    font-size: 18px;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+
+.gallery-item:hover .overlay {
+    opacity: 1;
+}
+
+/* Header Styles */
+header {
+    background: #f0f8f8;
+    padding: 20px;
+    text-align: center;
+}
+
+header h1 {
+    color: #38b6a7;
+    /* Sea green for the header title */
+    font-weight: bold;
+}
+
+header p {
+    color: #38b6a7;
+    /* Sea green for the subtitle */
+    margin: 0;
+}

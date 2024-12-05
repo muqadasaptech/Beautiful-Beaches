@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beautifull Beaches</title>
+
+    <!-- customcss Link -->
+    <link rel="stylesheet" href="customcss/style.css">
+
+    <!-- Bootstrap Online Link -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+
+    <!-- Offline Link -->
+    <!-- <link rel="stylesheet" href="bootstrap-5.3.3-dist/css/bootstrap.min.css"> -->
+
+    <!-- Fontawsome Link -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Animate.css Link -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+        integrity="sha512-c42qTSw/wPZ3/5LBzD+Bw5f7bSF2oxou6wEb+I/lqeaKV5FDIfMvvRp772y4jcJLKuGUOpbJMdg/BTl50fJYAw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- Font Link -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+        
+    <!-- Custom css -->
+    <style>
+        /* Custom themes */
+        :root {
+            --primary-color: rgb(0, 130, 100);
+            --secondary-color: #6c757d;
+            --accent-color: #07ffa8;
+        }
+
+        /* Navbar */
+        .navbar {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 10;
+            padding: 10px 0;
+            background-color: rgba(0, 0, 0, 0.138);
+        }
+
+        .nav-link {
+            color: white;
+            font-weight: 500;
+            transition: .3s ease;
+        }
+
+        .nav-link:hover {
+            color: rgb(0, 255, 200);
+            transform: scale(1.1);
+        }
+
+        .navbar-brand {
+            color: white;
+            font-size: 25px;
+        }
+
+        .navbar-brand:hover {
+            color: white;
+        }
+
+        /* Carousel */
+        .carousel-inner img {
+            height: 80vh;
+            object-fit: cover;
+            filter: brightness(150%);
+            filter: contrast(150%);
+            filter: saturate(200%);
+        }
+
+        .btn-primary:hover {
+            background-color: rgb(0, 130, 100);
+            border: 1px solid rgb(0, 130, 100);
+            color: white;
+            transition: .3s ease;
+        }
+
+        .btn-primary {
+            background-color: rgba(0, 130, 100, 0.479);
+            border: 1px solid rgba(0, 130, 100, 0.479);
+            color: white;
+        }
+
+        .section-title {
+            font-weight: 700;
+            color: var(--primary-color);
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .section-title::after {
+            content: '';
+            width: 50px;
+            height: 4px;
+            background: var(--secondary-color);
+            display: block;
+            margin: 10px auto;
+            animation: slideIn 1s;
+        }
+
+        .btn-custom {
+            background-color: var(--accent-color);
+            color: #fff;
+        }
+
+        .btn-custom:hover {
+            background-color: var(--primary-color);
+        }
+
+        .card,
+        .service-box {
+            background: #ffffff;
+            color: #333;
+            border-radius: 10px;
+            box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .card:hover,
+        .service-box:hover {
+            transform: scale(1.05);
+            box-shadow: 0px 20px 40px rgba(0, 0, 0, 0.2);
+        }
+
+        @keyframes slideIn {
+            from {
+                width: 0;
+            }
+
+            to {
+                width: 50px;
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+            margin-bottom: 15px;
+        }
+
+        #team .card {
+            transition: 0.3s ease;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        #team .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+        }
+
+
+        .carousel-caption {
+            background-color: rgba(0, 0, 0, 0.138);
+            color: rgb(255, 255, 255);
+            border-radius: 30px;
+        }
+
+        .filter {
+            filter: brightness(150%);
+            filter: contrast(150%);
+            filter: saturate(200%);
+        }
+
+        #text {
+            color: rgb(0, 130, 100);
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navbar Start -->
+    <nav class="navbar navbar-expand-lg px-5 py-3">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="index.html">
+                <i class="fa-solid fa-umbrella-beach"></i>
+                <strong class="brand-text">Beautiful Beaches</strong></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link pe-3" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link pe-3" href="aboutus.html">About</a></li>
+                    <li class="nav-item"><a class="nav-link pe-3" href="gallery.html">Gallery</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contactus.html">Contact</a></li>
+                    <li class="nav-item dropdown pe-3">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            Others
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="feedback.html">Feedback</a></li>
+                            <li><a class="dropdown-item" href="queries.html">Queries</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- Navbar End -->
+
+    <!-- Carousel section -->
+    <div id="beachcarousel" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#beachcarousel" data-bs-slide-to="0" class="active"
+                aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#beachcarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#beachcarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        </div>
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="images/home-1.jpg" class="d-block w-100" alt="...">
+                <div class="shadow-lg carousel-caption text-center mt-5">
+                    <h1><strong>Discover</strong><span> the World's</span> <br> Most Beautiful
+                        Beaches</h1>
+                    <p class="fs-4 pt-3">Explore breathtaking beach tours and experiences with us.</p>
+                    <a href="gallery.html" class="btn btn-primary btn-lg mt-4">Visit Now</a>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="images/home-2.jpg" class="d-block w-100" alt="...">
+                <div class="shadow-lg carousel-caption text-center mt-5">
+                    <h1><strong>Discover</strong><span> the World's</span> <br> Most Beautiful
+                        Beaches</h1>
+                    <p class="fs-4 pt-3">Explore breathtaking beach tours and experiences with us.</p>
+                    <a href="gallery.html" class="btn btn-primary btn-lg mt-4">Visit Now</a>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="images/home-3.jpg" class="d-block w-100" alt="...">
+                <div class="shadow-lg carousel-caption text-center mt-5">
+                    <h1><strong>Discover</strong><span> the World's</span> <br> Most Beautiful
+                        Beaches</h1>
+                    <p class="fs-4 pt-3">Explore breathtaking beach tours and experiences with us.</p>
+                    <a href="gallery.html" class="btn btn-primary btn-lg mt-4">Visit Now</a>
+                </div>
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#beachcarousel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#beachcarousel" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+    <!-- Crousel End -->
+
+    <!-- Home content -->
+    <section class="container my-5 p-5 shadow-lg justify-content-center rounded">
+        <div class="row g-5 align-items-center">
+            <div class="col-md-6">
+                <div class="shadow-lg img-fluid filter">
+                    <img class="w-100 rounded" src="images/intro.jpg" alt="">
+                </div>
+            </div>
+            <div class="col-md-6">
+                <h1 class="section-title text-start"><strong>Welcome</strong></h1>
+                <p class="text-secondary pt-2">Welcome to Beautiful Beaches – your gateway to the most breathtaking
+                    beach tours. Whether you're looking to relax on a secluded shore, explore vibrant coral reefs, or
+                    witness sunset views over crystal-clear waters, we have the perfect getaway for you.</p>
+            </div>
+        </div>
+    </section>
+    <!-- Home End -->
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="bg-light">
+        <div class="container text-center">
+            <h1 class="section-title p-5">Gallery</h1>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="card img-fluid filter h-100">
+                        <img src="images/gallery-1.jpg" class="card-img-top h-100" alt="">
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card img-fluid filter h-100">
+                        <img src="images/gallery-2.jpg" class="card-img-top h-100" alt="">
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card img-fluid filter h-100">
+                        <img src="images/gallery-3.jpg" class="card-img-top h-100" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Gallery End -->
+
+    <!-- Services Section -->
+    <!-- <section id="services" class="py-5">
+        <div class="container text-center">
+            <h1 class="section-title p-5">Our Services</h1>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div id="text" class="service-box p-4">
+                        <i class="fas fa-umbrella-beach fa-3x mb-3"></i>
+                        <h4>Guided Tours</h4>
+                        <p class="text-secondary">Experience the beauty of coastal paradises with our guided tours.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div id="text" class="service-box p-4">
+                        <i class="fas fa-camera fa-3x mb-3"></i>
+                        <h4>Photography</h4>
+                        <p class="text-secondary">Capture the magic of your trip with professional photos.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div id="text" class="service-box p-4">
+                        <i class="fas fa-plane fa-3x mb-3"></i>
+                        <h4>Travel Assistance</h4>
+                        <p class="text-secondary">Let us handle the details of your travel arrangements.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section> -->
+    <!-- Services End -->
+
+    <!-- Beaches Section -->
+    <section id="tours" class="container py-5">
+        <h1 class="section-title p-5">Beaches</h1>
+        <div class="row g-4">
+            <div class="col-md-4">
+                <div id="text" class="card filter h-100">
+                    <img src="images/beach-1.jpg" class="card-img-top h-100" alt="Tour 1">
+                    <div class="card-body">
+                        <h5 class="card-title"><strong>Radhanagar Beach</strong><br>East Zone
+                        <hr class="w-50"></h4>
+                            <p class="card-text text-secondary">Discover pristine beaches on our exclusive island tour.
+                            </p>
+                            <a href="gallery.html" class="btn btn-primary">Visit Now</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div id="text" class="card filter h-100">
+                    <img src="images/beach-2.jpg" class="card-img-top h-100" alt="Tour 2">
+                    <div class="card-body">
+                        <h5 class="card-title"><strong>Palolem Beach, Goa</strong><br>West Zone
+                        <hr class="w-50"></h5>
+                        <p class="card-text text-secondary">Perfect for families looking for a relaxing beach
+                            experience.</p>
+                        <a href="gallery.html" class="btn btn-primary">Visit Now</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div id="text" class="card filter h-100">
+                    <img src="images/beach-3.jpg" class="card-img-top h-100" alt="Tour 3">
+                    <div class="card-body">
+                        <h5 class="card-title"><strong>Kovalam Beach, Kerala</strong><br>South Zone
+                        <hr class="w-50"></h5>
+                        <p class="card-text text-secondary">Explore beautiful beaches and their surrounding cultural
+                            landmarks.</p>
+                        <a href="gallery.html" class="btn btn-primary">Visit Now</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Beaches Section End -->
+
+    <!-- Quote Start -->
+    <div class="container-fluid overflow-hidden my-5 px-lg-0">
+        <div class="container quote px-lg-0">
+            <div class="row g-0 mx-lg-0">
+                <div class="col quote-text bg-dark">
+                    <div class="h-100 px-4 px-sm-5 ps-lg-0">
+                        <h1 class="text-light mb-4"><strong>Welcome to Beautiful Beaches</strong></h1>
+                        <p class="text-light mb-5">Welcome to Beautiful Beaches – your gateway to the most breathtaking
+                            beach tours. Whether you're looking to relax on a secluded shore, explore vibrant coral
+                            reefs, or witness sunset views over crystal-clear waters, we have the perfect getaway for
+                            you.</p>
+                        <a href="aboutus.html" class="align-self-start btn btn-primary btn-lg py-3 px-5">More Details</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Quote End -->
+
+    <!-- Team Section -->
+    <section id="team" class="container mt-5">
+        <h2 class="section-title pt-5 pb-2">Meet Our Team</h2>
+        <p class="text-center pb-4 h5 text-secondary">Our dedicated team of researchers is here to guid you.
+        </p>
+
+        <div class="row text-center justify-content-center mt-4">
+            <!-- Team Member 1 -->
+            <div class="col-md-4 mb-4">
+                <div class="card p-3">
+                    <img src="images/team1.jpg" alt="Team Member 1" class="card-img-top rounded-circle mx-auto"
+                        style="width: 100px;">
+                    <div class="card-body">
+                        <h5 id="text" class="card-title"><strong class="text">Abdulhadi</strong></h5>
+                        <p id="text" class="card-text">Founder & CEO</p>
+                        <p class="text-muted">Abdulhadi has over 10 years of experience in the travel industry and is
+                            passionate about creating unforgettable beach experiences.</p>
+                        <a href="https://pk.linkedin.com/" class="btn btn-primary btn-sm"><i class="fab fa-linkedin"></i> LinkedIn</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Team Member 2 -->
+            <div class="col-md-4 mb-4">
+                <div class="card p-3">
+                    <img src="images/team1.jpg" alt="Team Member 2" class="card-img-top rounded-circle mx-auto"
+                        style="width: 100px;">
+                    <div class="card-body">
+                        <h5 id="text" class="card-title"><strong>Atif Khalil</strong></h5>
+                        <p id="text" class="card-text">Tour Manager</p>
+                        <p class="text-muted">Atif Khalil ensures every detail of your tour is planned to perfection. She's
+                            an expert in organizing seamless beach adventures.</p>
+                        <a href="https://pk.linkedin.com/" class="btn btn-primary btn-sm"><i class="fab fa-linkedin"></i> LinkedIn</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Team Member 3 -->
+            <div class="col-md-4 mb-4">
+                <div class="card p-3">
+                    <img src="images/team1.jpg" alt="Team Member 3" class="card-img-top rounded-circle mx-auto"
+                        style="width: 100px;">
+                    <div class="card-body">
+                        <h5 id="text" class="card-title"><strong>Khizar Kashif</strong></h5>
+                        <p id="text" class="card-text">Beach Specialist</p>
+                        <p class="text-muted">Khizar Kashif With a deep knowledge of global beach destinations, Michael handpicks the
+                            best spots for your next escape.</p>
+                        <a href="https://pk.linkedin.com/" class="btn btn-primary btn-sm"><i class="fab fa-linkedin"></i> LinkedIn</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Team member 4 -->
+            <div class="col-md-4 mb-4">
+                <div class="card p-3">
+                    <img src="images/team1.jpg" alt="Team Member 3" class="card-img-top rounded-circle mx-auto"
+                        style="width: 100px;">
+                    <div class="card-body">
+                        <h5 id="text" class="card-title"><strong>Gull Butt</strong></h5>
+                        <p id="text" class="card-text">Beach Specialist</p>
+                        <p class="text-muted">Gull with a deep knowledge of global beach destinations, Michael handpicks the
+                            best spots for your next escape.</p>
+                        <a href="https://pk.linkedin.com/" class="btn btn-primary btn-sm"><i class="fab fa-linkedin"></i> LinkedIn</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Team member 5 -->
+            <div class="col-md-4 mb-4">
+                <div class="card p-3">
+                    <img src="images/team2.jpg" alt="Team Member 3" class="card-img-top rounded-circle mx-auto"
+                        style="width: 100px;">
+                    <div class="card-body">
+                        <h5 id="text" class="card-title"><strong>Alishba</strong></h5>
+                        <p id="text" class="card-text">Beach Specialist</p>
+                        <p class="text-muted">Alishba with a deep knowledge of global beach destinations, Michael handpicks the
+                            best spots for your next escape.</p>
+                        <a href="https://pk.linkedin.com/" class="btn btn-primary btn-sm"><i class="fab fa-linkedin"></i> LinkedIn</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Team Section End -->
+
+      <!-- Footer Start -->
+      <div class="container-fluid bg-dark footer">
+        <div class="container py-5">
+            <div class="row justify-content-center">
+                <div class="col-md-12">
+                    <h1 class="text-start text-light mb-5">
+                        <strong>Beautifull Beaches</strong>
+                    </h1>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-5">
+                    <h5 class="text-light mb-3"><strong>Quick Links</strong></h5>
+                    <div style="height: 5px; background-color: white;" class="w-100 mb-3"></div>
+                    <a class="btn btn-link text-light" href="index.html">Home</a>
+                    <a class="btn btn-link text-light" href="aboutus.html">About</a>
+                    <a class="btn btn-link text-light" href="gallery.html">Gallery</a>
+                    <a class="btn btn-link text-light" href="contactus.html">Contact</a>
+                    <a class="btn btn-link text-light" href="feedback.html">Feedback</a>
+                    <a class="btn btn-link text-light" href="queries.html">Queries</a>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-5">
+                    <h5 class="text-light mb-3">Get In Touch</h5>
+                    <div style="height: 5px; background-color: white;" class="w-100 mb-3"></div>
+                    <p class="text-light "><i class="fa fa-map-marker-alt me-3"></i>Aptech,NK Campus</p>
+                    <p class="text-light "><i class="fa fa-phone-alt me-3"></i>+92 327 2131145</p>
+                    <p class="text-light"><i class="fa fa-envelope me-3"></i>Beautifullbeaches@gmail.com</p>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <h5 class="text-light mb-3 ps-2">Follow Us</h5>
+                    <div style="height: 5px; background-color: white;" class="w-100 mb-3"></div>
+                    <div class="mt-3">
+                        <a href="https://www.facebook.com/" class="hovereffect text-light p-2 me-2"><i
+                                class="bi bi-facebook"></i></a>
+                        <a href="https://twitter.com/" class="hovereffect text-light p-2 me-2"><i
+                                class="bi bi-twitter"></i></a>
+                        <a href="https://www.instagram.com/" class="hovereffect text-light p-2 me-2"><i
+                                class="bi bi-instagram"></i></a>
+                        <a href="https://pk.linkedin.com/" class="hovereffect text-light p-2"><i
+                                class="bi bi-linkedin"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid copyright">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6  text-md-start mb-3 mb-md-0">
+                        &copy; <a class="text-light" href="index.html"><b>Beautifull Beaches</b></a>, All Right Reserved.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Footer End -->
+
+    <!-- Offline Link -->
+    <!-- <script src="bootstrap-5.3.3-dist/js/bootstrap.min.js"></script> -->
+
+    <!-- Bootstrap Js Online Link -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Custom JS -->
+    <script src="javascript.js"></script>
+</body>
+
+</html>
